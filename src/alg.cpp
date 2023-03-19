@@ -6,17 +6,20 @@ int cbinsearch(int *arr, int size, int value) {
         middle = (left + right) / 2;
         if (*(arr + middle) < value)
             left = middle++;
-        else if (*(arr + middle) > value)
+        else if (*(arr + middle) > value) {
             right = middle;
+        }
         else {
             num = 1;
-            for (int mid_left = middle - 1; *(arr + mid_left) <= *(arr); mid_left--) {
+            for (int mid_left = middle - 1; *(arr + mid_left) <= *(arr);
+                 mid_left--) {
                 if (value == *(arr + mid_left))
                     num++;
                 if (*(arr + mid_left) == *(arr))
                     break;
             }
-            for (int mid_right = middle + 1; *(arr + mid_right) >= *(arr + size); mid_right++) {
+            for (int mid_right = middle + 1; *(arr + mid_right) >= *(arr + size);
+                 mid_right++) {
                 if (value == *(arr + mid_right))
                     num++;
                 if (*(arr + mid_right) == *(arr + size))
