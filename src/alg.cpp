@@ -19,7 +19,8 @@ int cbinsearch(int *arr, int size, int value) {
                 num++;
                 mid_right++;
             }
+            return num;
         }
     }
-    return num;
+    return 0;
 }
