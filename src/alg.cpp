@@ -11,11 +11,11 @@ int cbinsearch(int *arr, int size, int value) {
         } else {
             num++;
             int mid_left = middle - 1, mid_right = middle + 1;
-            while ((mid_left >= 0) && (*(arr + mid_left) == value)) {
+            while ((*(arr + mid_left) == value) && (mid_left >= 0)) {
                 num++;
                 mid_left--;
             }
-            while ((mid_right < size) && (*(arr + mid_right) == value)) {
+			while ((*(arr + mid_right) == value) && (mid_right >= 0)) {
                 num++;
                 mid_right++;
             }
